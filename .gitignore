@@ -1,0 +1,42 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub-cache/
+build/
+
+# Visual Studio Code
+.vscode/
+
+# Xcode
+ios/Flutter/.generated/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+ios/.symlinks/
+ios/build/
+ios/Pods/
+ios/Runner.xcworkspace/
+
+# Android
+android/.gradle/
+android/captures/
+android/app/build/
+
+# macOS
+macos/Flutter/Flutter-Debug.xcconfig
+macos/Flutter/Flutter-Release.xcconfig
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/.symlinks/
+macos/build/
+
+# Windows
+windows/flutter/ephemeral/
+
+# Web
+web/.dart_tool/
+
+# Misc
+*.iml
+*.lock.hive
+*.log
