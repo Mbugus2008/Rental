@@ -1,0 +1,16 @@
+bin/
+obj/
+*.user
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.vs/
+launchSettings.json
+appsettings.Development.json
+node_modules/
+wwwroot/lib/
+# Python leftovers (if any)
+__pycache__/
+*.pyc
+.DS_Store
