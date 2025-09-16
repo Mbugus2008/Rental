@@ -8,9 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-var connectionString = builder.Configuration.GetConnectionString("RentalDatabase") ?? "Data Source=rental.db";
+var connectionString = builder.Configuration.GetConnectionString("RentalDatabase")
+    ?? "Server=(localdb)\\mssqllocaldb;Database=RentalDb;Trusted_Connection=True;TrustServerCertificate=True;";
 builder.Services.AddDbContext<RentalContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

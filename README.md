@@ -1,6 +1,6 @@
 # Rental Manager (ASP.NET Core)
 
-Rental Manager is a full-featured ASP.NET Core MVC application designed to help landlords monitor properties, tenants, lease agreements, and rent collections in one place. It uses Entity Framework Core with SQLite for lightweight persistence and seeds demo data on first launch so you can explore immediately.
+Rental Manager is a full-featured ASP.NET Core MVC application designed to help landlords monitor properties, tenants, lease agreements, and rent collections in one place. It uses Entity Framework Core with SQL Server for durable persistence and seeds demo data on first launch so you can explore immediately.
 
 ## Features
 
@@ -14,7 +14,7 @@ Rental Manager is a full-featured ASP.NET Core MVC application designed to help 
 ## Technology stack
 
 - [ASP.NET Core MVC 8](https://learn.microsoft.com/aspnet/core) for the web application and Razor UI.
-- [Entity Framework Core](https://learn.microsoft.com/ef/core) with the SQLite provider for data access.
+- [Entity Framework Core](https://learn.microsoft.com/ef/core) with the SQL Server provider for data access.
 - Bootstrap 5 for layout and styling with a small amount of custom CSS.
 
 ## Getting started
@@ -39,7 +39,7 @@ Rental Manager is a full-featured ASP.NET Core MVC application designed to help 
 
 4. **Explore the seeded portfolio**
 
-   The first launch creates `rental.db` in the project root and seeds a few properties, tenants, leases, and payments. You can add, edit, or delete records using the navigation links in the header.
+   The first launch provisions a SQL Server database named `RentalDb` (LocalDB by default) and seeds a few properties, tenants, leases, and payments. You can add, edit, or delete records using the navigation links in the header. Update the `RentalDatabase` connection string in `appsettings.json` if you want to target a different SQL Server instance.
 
 ## Project structure
 
@@ -53,11 +53,11 @@ Rental Manager is a full-featured ASP.NET Core MVC application designed to help 
 ├── wwwroot/                 # Static assets (Bootstrap overrides)
 ├── Program.cs               # ASP.NET Core entry point and middleware configuration
 ├── Rental.csproj          # Project definition and package references
-└── appsettings.json         # Configuration including SQLite connection string
+└── appsettings.json         # Configuration including SQL Server connection string
 ```
 
 ## Development notes
 
-- Entity Framework Core uses `EnsureCreated` on startup; delete `rental.db` to reset the sample data.
+- Entity Framework Core uses `EnsureCreated` on startup; drop the `RentalDb` database (or clear your target SQL Server database) to reset the sample data.
 - Validation attributes on the models drive both client-side and server-side validation for forms.
-- The solution targets .NET 8 and uses SQLite for simplicity. Swap the connection string in `appsettings.json` and install another EF Core provider if you prefer SQL Server or PostgreSQL.
+- The solution targets .NET 8 and uses SQL Server by default. Swap the connection string in `appsettings.json` and install another EF Core provider if you prefer SQLite, PostgreSQL, or a different database engine.
